@@ -2,7 +2,7 @@ readTableWithoutNA = function(){
 	na.omit(read.csv(file="planilha.csv", head=TRUE, sep=",", na.strings=c("", "NA")))
 }
 
-samplefy = function(table, field, size, numOfSamples){
+samplefy = function(table, size, numOfSamples){
 	
 	s = double(numOfSamples*size)
 	for (i in 1:numOfSamples) {
@@ -17,23 +17,35 @@ samplefy = function(table, field, size, numOfSamples){
 	for (i in 1:numOfSamples) {
 		media[i] = mean(s[,i])
 	}
-	message("<<", numOfSamples, " amostras de tamanho ", size, " do campo ", field, ">>")
-	message("Media das amostras: ")
-	print(media)
-	message("Sumário das amostras: ")
 	media
 }
 
-printSample = function(sample, title) {
+printSample = function(sample, size, title, originalData) {
 	qqnorm(sample, main=title)
 	qqline(sample, col=2)
+	print("==============================================")
+	print(title)
+	print(sample)
+	print("Sumário das amostras: ")
+	print(summary(sample))
+	print("Média esperada: ")
+	print(mean(originalData))
+	print("Variância: ")
+	print(var(sample))
+	print("Variância esperada (original/n)")
+	print(var(originalData)/size)
 }
 
 
-nha = readTableWithoutNA()
-summary(nha$Renda)
-printSample(samplefy(nha$Renda, "Renda", 4, 200), "Média de 200 amostras de 4 dados aleatórios")
-printSample(samplefy(nha$Renda, "Renda", 8, 200), "Média de 200 amostras de 8 dados aleatórios")
-printSample(samplefy(nha$Renda, "Renda", 16, 200), "Média de 200 amostras de 16 dados aleatórios")
-printSample(samplefy(nha$Renda, "Renda", 30, 200), "Média de 200 amostras de 30 dados aleatórios")
-printSample(samplefy(nha$Renda, "Renda", 100, 200), "Média de 200 amostras de 100 dados aleatórios")
+data = readTableWithoutNA()
+print("Sumário dos dados originais:")
+summary(data$Renda)
+print("Variância")
+print(var(data$Renda))
+print("====AMOSTRAS=====")
+
+printSample(samplefy(data$Renda, 4, 200), 4, "Média de 200 amostras de 4 dados aleatórios", data$Renda)
+printSample(samplefy(data$Renda, 8, 200), 8, "Média de 200 amostras de 8 dados aleatórios", data$Renda)
+printSample(samplefy(data$Renda, 16, 200), 16, "Média de 200 amostras de 16 dados aleatórios", data$Renda)
+printSample(samplefy(data$Renda, 30, 200), 30, "Média de 200 amostras de 30 dados aleatórios", data$Renda)
+printSample(samplefy(data$Renda, 100, 200), 100, "Média de 200 amostras de 100 dados aleatórios", data$Renda)
