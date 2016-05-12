@@ -6,7 +6,7 @@ samplefy = function(table, size, numOfSamples){
 	
 	s = double(numOfSamples*size)
 	for (i in 1:numOfSamples) {
-		currentSample = sample(table, size)
+		currentSample = sample(table, size, replace=TRUE)
 		for (j in 1:size) {
 			index = (i-1)*size + j
 			s[index] = currentSample[j]
