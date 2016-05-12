@@ -35,6 +35,10 @@ printSample = function(sample, size, title, originalData) {
 	print(var(sample))
 	print("Variância esperada (original/n)")
 	print(var(originalData)/size)
+	print("Desvio Padrão")
+	print(sd(sample))
+	print("Desvio Padrão esperado")
+	print(sd(originalData)/sqrt(size))
 }
 
 
@@ -50,3 +54,4 @@ printSample(samplefy(data$Renda, 8, 200), 8, "Média de 200 amostras com 8 dados
 printSample(samplefy(data$Renda, 16, 200), 16, "Média de 200 amostras com 16 dados", data$Renda)
 printSample(samplefy(data$Renda, 30, 200), 30, "Média de 200 amostras com 30 dados", data$Renda)
 printSample(samplefy(data$Renda, 100, 200), 100, "Média de 200 amostras com 100 dados", data$Renda)
+printSample(samplefy(data$Renda, 200, 200), 200, "Média de 200 amostras com 200 dados", data$Renda)
