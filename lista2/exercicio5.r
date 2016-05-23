@@ -47,10 +47,10 @@ print("Sumário dos dados originais:")
 summary(data)
 to = table(data)
 freqo1 = to[names(to)=="Insatisfeito"]
-	print("Frequência original:")
+print("Frequência original:")
 print(freqo1)
 freqo2 = to[names(to)=="Muito insatisfeito"]
-	print("Frequência original:")
+print("Frequência original:")
 print(freqo2)
 freqo = freqo1 + freqo2
 print("Proporcao original p:")
@@ -59,4 +59,4 @@ print(po)
 
 print("====AMOSTRAS=====")
 
-printSample(samplefy(data, 200), 200, "Amostra de \"Pagamento\" com 200 dados", data)
+printSample(samplefy(data, 200), 200, "Amostra de Opiniao com 200 dados", data)

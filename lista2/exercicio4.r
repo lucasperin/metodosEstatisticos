@@ -51,4 +51,4 @@ print(po)
 
 print("====AMOSTRAS=====")
 
-printSample(samplefy(data, 200), 200, "Amostra de \"Pagamento\" com 200 dados", data)
+printSample(samplefy(data, 200), 200, "Amostra de Pagamento com 200 dados", data)
