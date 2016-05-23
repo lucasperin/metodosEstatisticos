@@ -15,7 +15,7 @@ printSample = function(sample, size, title, originalData) {
 	print(summary(sample))
 	t = table(sample)
 	freq = t[names(t)=="Incentivos federais"]
-	print("Frequência de Incentivos Federais:")
+	print("Frequência da amostra para Incentivos Federais:")
 	print(freq)
 	print("Proporcao p:")
 	p = freq/size

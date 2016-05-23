@@ -15,13 +15,13 @@ printSample = function(sample, size, title, originalData) {
 	print(summary(sample))
 	t = table(sample)
 	freq1 = t[names(t)=="Insatisfeito"]
-	print("Frequência original:")
+	print("Frequência da amostra:")
 	print(freq1)
 	freq2 = t[names(t)=="Muito insatisfeito"]
-	print("Frequência original:")
+	print("Frequência da amostra:")
 	print(freq2)
 	freq = freq1 + freq2
-	print("Proporcao p:")
+	print("Proporcao da amostra p:")
 	p = freq/size
 	print(p)
 
