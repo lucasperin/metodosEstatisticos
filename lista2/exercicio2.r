@@ -21,7 +21,8 @@ printSample = function(sample, size, title, originalData) {
 	s = sd(sample)
 	x = mean(sample)
 	sx = s / sqrt(n)
-
+	print("desvio padrao")
+	print(s)
 	print("Intervalo com 95% de confiança:")
 	print(2.093 * sx)
 	print("Intervalo com 99% de confiança:")
