@@ -24,7 +24,7 @@ printSample = function(sample, size, title, originalData) {
 
 	n = size
 	N = length(originalData)
-	sp = sqrt(p*(2-p)/n) * sqrt((N-n)/(N-1))
+	sp = sqrt(p*(2-p)/n)# * sqrt((N-n)/(N-1))
 	print("Intervalo:")
 	print(1.96*sp)
 	message("Para amostra com ", size, " elementos, o intervalo de 95% de confianca para p está entre ", p - 1.96*sp, " e ", p + 1.96*sp)
