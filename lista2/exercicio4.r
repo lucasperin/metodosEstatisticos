@@ -12,14 +12,13 @@ samplefy = function(table, size){
 printSample = function(sample, size, title, originalData) {
 	print("==============================================")
 	print(title)
-	print(summary(sample))
 	t = table(sample)
+	print("Frequência da amostra")
+	print(t)
+	print("Proporcoes:")
+	print(t/size)
 	freq = t[names(t)=="Incentivos federais"]
-	print("Frequência da amostra para Incentivos Federais:")
-	print(freq)
-	print("Proporcao p:")
 	p = freq/size
-	print(p)
 
 	n = size
 	N = length(originalData)
