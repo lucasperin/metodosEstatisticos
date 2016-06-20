@@ -1,5 +1,5 @@
 #le os dados 
-data = read.csv(file = "amostra1.csv")
+data = read.csv(file = "amostraIdade20.csv")
 
 #imprime um sumario dos dados
 summary(data$x)

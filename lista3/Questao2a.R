@@ -1,5 +1,5 @@
 #le os dados 
-data = read.csv(file = "amostra2.csv")
+data = read.csv(file = "amostraRenda20.csv")
 
 #imprime um sumario dos dados
 summary(data$x)
@@ -11,10 +11,10 @@ skewness(data$x)
 n = length(data$x)
 
 #hipotese nula
-H0 = 4.5
+H0 = 27
 
 #nivel de significancia
-alpha = 0.01
+alpha = 0.05
 
 #hipotese a ser testada
 xbar = mean(data$x)
@@ -28,7 +28,7 @@ s
 df = n-1
 df
 
-#cálculo de t(n-1) grais de liberdade
+#cálculo de t(n-1) graus de liberdade
 t = ((xbar-H0)*sqrt(n))/s 
 t
 
