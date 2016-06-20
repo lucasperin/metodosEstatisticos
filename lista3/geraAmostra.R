@@ -6,7 +6,7 @@ samplefy = function(table, size){
   
   s = double(size)
   sample = sample(table, size, replace=TRUE)
-  write.csv(sample, file = "amostra2.csv")
+  write.csv(sample, file = "amostraRenda70.csv")
   sample
 }
 
@@ -19,5 +19,5 @@ print("Variância")
 print(var(data$Renda))
 print("====AMOSTRAS=====")
 
-samplefy(data$Renda, 20)
+samplefy(data$Renda, 70)
 
