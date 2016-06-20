@@ -1,5 +1,5 @@
 readTableWithoutNA = function(){
-	na.omit(read.csv(file="planilha.csv", head=TRUE, sep=",", na.strings=c("", "NA")))
+	na.omit(read.csv(file="../planilha.csv", head=TRUE, sep=",", na.strings=c("", "NA")))
 }
 
 rebase = function(table) {
