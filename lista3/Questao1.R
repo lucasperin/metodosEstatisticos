@@ -28,7 +28,7 @@ s
 df = n-1
 df
 
-#cálculo de t(n-1) grais de liberdade
+#cálculo de t(n-1) graus de liberdade
 t = ((xbar-H0)*sqrt(n))/s 
 t
 
