@@ -5,11 +5,15 @@ readTableWithoutNA = function(){
 
 data = readTableWithoutNA()
 print("Sumário da renda para Incentivos federais")
-summary(data[ which(data$PagamentoC == "Incentivos federais"), ]$Renda)
+renda1 = data[ which(data$PagamentoC == "Incentivos federais"), ]$Renda
+summary(renda1)
+print(var(renda1))
 
 #summary(data[which(data$PagamentoC = "Incentivos federais"),])
 
 print("Sumário da renda para Outras formas de pagamento")
-summary(data[ which(data$PagamentoC != "Incentivos federais"), ]$Renda)
+renda2 = data[ which(data$PagamentoC != "Incentivos federais"), ]$Renda
+summary(renda2)
+print(var(renda2))
 
 
