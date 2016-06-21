@@ -2,22 +2,15 @@ readTableWithoutNA = function(){
   na.omit(read.csv(file="../planilha.csv", head=TRUE, sep=",", na.strings=c("", "NA")))
 }
 
-samplefy = function(table, size){
-  
-  s = double(size)
-  sample = sample(table, size, replace=TRUE)
-  write.csv(sample, file = "amostraRendaPagamento.csv")
-  sample
-}
-
 data = readTableWithoutNA()
-print("Sumário dos dados originais:")
-summary(data$Renda)
 
-print("Variância")
+smpl = data[sample(1:nrow(data), 80, replace=TRUE),]
 
-print(var(data$Renda))
-print("====AMOSTRAS=====")
 
-samplefy(data[which(data$Renda & data$Pagamento)], 80)
+smpl$Pagamento = as.character(smpl$Pagamento)
+smpl$Pagamento[smpl$Pagamento != "Incentivos federais"] <- "Outras formas de pagamento"
 
+RowNames = c("Renda", "PagamentoC")
+newData = smpl[,c("Renda", "Pagamento")]
+
+write.csv(newData, file = "amostraRendaPagamento.csv")
