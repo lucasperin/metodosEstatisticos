@@ -74,7 +74,7 @@ poder_do_teste(abs(4.35 - h0), sdev, n),
 poder_do_teste(abs(4.5 - h0), sdev, n)
 )
 
-png("poderDoTeste.png")
+pdf("poderDoTeste.pdf")
 plot(poder20, type="o", col="blue", ylim=c(0, 1), axes=FALSE, ann=FALSE)
 lines(poder40, type="o", pch=22, col="red")
 lines(poder50, type="o", pch=23, col="green")
