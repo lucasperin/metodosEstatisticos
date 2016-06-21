@@ -17,7 +17,7 @@ poder_do_teste(0.34, 0.35),
 poder_do_teste(0.35, 0.35)
 )
 
-pdf("podeDoTesteProporcao.pdf")
+pdf("poderDoTesteProporcao.pdf")
 plot(poder, type="o", col="blue", ylim=c(0,1), axes=FALSE, ann=FALSE)
 
 axis(1, at=1:8, lab=c(2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5))
